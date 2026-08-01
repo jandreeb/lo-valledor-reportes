@@ -1,0 +1,163 @@
+/* ===========================
+   LV Assistant - Estilos V1
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+
+    background:#111827;
+    color:#ffffff;
+    padding:20px;
+}
+
+.header{
+
+    text-align:center;
+    margin-bottom:30px;
+
+}
+
+.header h1{
+
+    font-size:34px;
+    color:#41d67a;
+
+}
+
+.header p{
+
+    color:#b9c0cc;
+    margin-top:8px;
+
+}
+
+section{
+
+    background:#1f2937;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:18px;
+
+}
+
+h2{
+
+    margin-bottom:15px;
+    color:#41d67a;
+    font-size:20px;
+
+}
+
+label{
+
+    display:block;
+    margin-bottom:15px;
+
+}
+
+input,
+select,
+textarea{
+
+    width:100%;
+    margin-top:8px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#374151;
+    color:white;
+    font-size:16px;
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#bdbdbd;
+
+}
+
+button{
+
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#41d67a;
+    color:#111827;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+
+}
+
+button:hover{
+
+    transform:scale(1.02);
+
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+
+}
+
+.menuBtn{
+
+    background:#2b3648;
+    color:white;
+    min-height:80px;
+    font-size:17px;
+
+}
+
+.menuBtn:hover{
+
+    background:#41d67a;
+    color:#111827;
+
+}
+
+#listaProcedimientos{
+
+    background:#111827;
+    border-radius:12px;
+    padding:15px;
+    min-height:120px;
+
+}
+
+footer{
+
+    text-align:center;
+    color:#8d97a7;
+    margin-top:25px;
+    margin-bottom:30px;
+
+}
+
+@media(max-width:600px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.header h1{
+
+font-size:28px;
+
+}
+
+}
