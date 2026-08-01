@@ -46,3 +46,9 @@ nombreTurno="🛌 Libre";
 }
 
 console.log(nombreTurno);
+
+const turnoElemento = document.getElementById("turnoHoy");
+
+if (turnoElemento) {
+    turnoElemento.textContent = nombreTurno;
+}
