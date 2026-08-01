@@ -1,59 +1,48 @@
-// ======================================
-// LV Assistant v1.0
-// Sistema de Reportes Lo Valledor
-// ======================================
+// CONFIGURACIÓN
 
-const btnGuardar = document.getElementById("guardarSemana");
+const ciclo = [
+"M","L",
+"N","N","N","N","N","L","L",
+"T","T","T","T","T","T","L",
+"M","M","M","M","M","L",
+"N","N","N","N","N","L","L",
+"T","T","T","T","T","T","L"
+];
 
-const indicativo = document.getElementById("indicativo");
-const patio = document.getElementById("patio");
-const jefe = document.getElementById("jefe");
+// FECHA BASE DEL CICLO
 
-//======================
-// CARGAR CONFIGURACIÓN
-//======================
+const inicio = new Date("2026-08-01");
 
-window.onload = () => {
+// FECHA DE HOY
 
-    if(localStorage.getItem("indicativo"))
-        indicativo.value = localStorage.getItem("indicativo");
+const hoy = new Date();
 
-    if(localStorage.getItem("patio"))
-        patio.value = localStorage.getItem("patio");
+inicio.setHours(0,0,0,0);
+hoy.setHours(0,0,0,0);
 
-    if(localStorage.getItem("jefe"))
-        jefe.value = localStorage.getItem("jefe");
+const dias = Math.floor((hoy-inicio)/(1000*60*60*24));
+
+const turno = ciclo[((dias%ciclo.length)+ciclo.length)%ciclo.length];
+
+let nombreTurno="";
+
+switch(turno){
+
+case "M":
+nombreTurno="🌞 Mañana";
+break;
+
+case "T":
+nombreTurno="🌆 Tarde";
+break;
+
+case "N":
+nombreTurno="🌙 Noche";
+break;
+
+default:
+nombreTurno="🛌 Libre";
 
 }
 
-//======================
-// GUARDAR
-//======================
-
-btnGuardar.addEventListener("click",()=>{
-
-    localStorage.setItem("indicativo",indicativo.value);
-
-    localStorage.setItem("patio",patio.value);
-
-    localStorage.setItem("jefe",jefe.value);
-
-    alert("✅ Configuración semanal guardada");
-
-});
-
-//======================
-// BOTONES DE MENÚ
-//======================
-
-const botones=document.querySelectorAll(".menuBtn");
-
-botones.forEach(boton=>{
-
-    boton.addEventListener("click",()=>{
-
-        alert("Próximamente: "+boton.innerText);
-
-    });
-
-});
+console.log(nombreTurno);
