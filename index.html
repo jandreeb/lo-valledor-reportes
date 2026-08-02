@@ -96,7 +96,9 @@ Guardar Configuración
 
 <div class="grid">
 
-<button class="menuBtn">🛒 Ambulante</button>
+<button class="menuBtn" id="btnAmbulante">
+🛒 Ambulante
+</button>
 
 <button class="menuBtn">🚫 Bloqueo</button>
 
@@ -141,6 +143,37 @@ LV Assistant ©️ 2026
 </p>
 
 </footer>
+
+<section id="formAmbulante" style="display:none;">
+
+<h2>🛒 Comercio Ambulante</h2>
+
+<label>Hora</label>
+<input type="time" id="horaAmbulante">
+
+<label>Detalle</label>
+<textarea
+id="detalleAmbulante"
+placeholder="Ej: Persona realizando comercio ambulante no autorizado..."
+></textarea>
+
+<label>Calle / Patio</label>
+<input
+type="text"
+id="lugarAmbulante"
+placeholder="Ej: Calle 12 Sur al medio, Patio 1">
+
+<label>Puerta de salida</label>
+<input
+type="text"
+id="puertaAmbulante"
+placeholder="Ej: Puerta 7">
+
+<button id="copiarAmbulante">
+📋 Copiar reporte
+</button>
+
+</section>
 
 <script src="app.js"></script>
 
