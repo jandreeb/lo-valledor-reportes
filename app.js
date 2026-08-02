@@ -52,3 +52,70 @@ const turnoElemento = document.getElementById("turnoHoy");
 if (turnoElemento) {
     turnoElemento.textContent = nombreTurno;
 }
+
+// ===============================
+// CONFIGURACIÓN GUARDADA
+// ===============================
+
+const indicativo = document.getElementById("indicativo");
+const patio = document.getElementById("patio");
+const jefe = document.getElementById("jefe");
+
+// Cargar configuración guardada
+window.addEventListener("load", () => {
+
+    if(localStorage.getItem("indicativo")){
+        indicativo.value = localStorage.getItem("indicativo");
+    }
+
+    if(localStorage.getItem("patio")){
+        patio.value = localStorage.getItem("patio");
+    }
+
+    if(localStorage.getItem("jefe")){
+        jefe.value = localStorage.getItem("jefe");
+    }
+
+});
+
+// Guardar configuración
+function guardarConfiguracion(){
+
+    localStorage.setItem("indicativo", indicativo.value);
+    localStorage.setItem("patio", patio.value);
+    localStorage.setItem("jefe", jefe.value);
+
+    alert("✅ Configuración guardada correctamente.");
+
+}
+
+// Conectar botón
+const botonGuardar = document.querySelector("button");
+
+if(botonGuardar){
+    botonGuardar.addEventListener("click", guardarConfiguracion);
+}
+
+// ===============================
+// MENSAJE MOTIVADOR
+// ===============================
+
+const hora = new Date().getHours();
+
+let saludo = "";
+
+if(hora >= 5 && hora < 12){
+
+    saludo = "🌅 ¡Buenos días! Que tengas un turno tranquilo y sin novedades.";
+
+}else if(hora >=12 && hora <18){
+
+    saludo = "💪 Vas excelente. Sigue atento y mantén el control del sector.";
+
+}else{
+
+    saludo = "🌙 Buen trabajo. Cada procedimiento bien realizado hace un mercado más seguro.";
+
+}
+
+console.log(saludo);
