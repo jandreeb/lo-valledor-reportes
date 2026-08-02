@@ -27,3 +27,25 @@ ${datos.puerta}
 
 }
 console.log("Plantillas cargadas");
+
+function crearNotificacion(datos){
+
+    return `*Procedimiento:*
+Notificación
+
+*Detalles del procedimiento:*
+A las ${datos.hora} hrs se notifica a ${datos.persona} respecto de ${datos.motivo}. La persona queda en conocimiento de la situación sin más novedades.
+
+*Calle/Postura/Patio:*
+${datos.lugar}, ${datos.patio}
+
+*Procedimiento realizado por:*
+*${datos.nombre} - ${datos.indicativo} - ${datos.patio}*
+
+*Nombre Jefe Cuadrante:*
+*${datos.jefeCuadrante}*
+
+*Nombre Jefe de Mercado:*
+*${datos.jefeMercado}*`;
+
+}
