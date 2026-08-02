@@ -1,56 +1,47 @@
 // ===============================
-// TURNOS
+// TURNO AUTOMÁTICO LV ASSISTANT
 // ===============================
 
+const inicioCiclo = new Date(2026, 7, 1); // 1 Agosto 2026
+
 const ciclo = [
+
 "M","L",
 "N","N","N","N","N","L","L",
 "T","T","T","T","T","T","L",
 "M","M","M","M","M","L",
-"N","N","N","N","N","L","L",
-"T","T","T","T","T","T","L"
+"N","N","N","N","L","L",
+"T","T"
+
 ];
 
-const inicio = new Date("2026-08-01");
+const hoy = new Date();
 
-function actualizarTurno(){
+const msDia = 1000 * 60 * 60 * 24;
 
-    const hoy = new Date();
+const dias = Math.floor((hoy - inicioCiclo) / msDia);
 
-    inicio.setHours(0,0,0,0);
-    hoy.setHours(0,0,0,0);
+const turno = ciclo[((dias % ciclo.length) + ciclo.length) % ciclo.length];
 
-    const dias = Math.floor((hoy-inicio)/(1000*60*60*24));
+let texto = "";
 
-    const turno = ciclo[((dias%ciclo.length)+ciclo.length)%ciclo.length];
+switch(turno){
 
-    let nombreTurno="";
+case "M":
+texto = "🌅 Mañana\n07:00 - 14:30";
+break;
 
-    switch(turno){
+case "T":
+texto = "🌇 Tarde\n14:30 - 22:00";
+break;
 
-        case "M":
-            nombreTurno="🌞 Mañana";
-            break;
+case "N":
+texto = "🌙 Noche\n22:00 - 07:00";
+break;
 
-        case "T":
-            nombreTurno="🌆 Tarde";
-            break;
-
-        case "N":
-            nombreTurno="🌙 Noche";
-            break;
-
-        default:
-            nombreTurno="🛌 Libre";
-
-    }
-
-    const turnoElemento=document.getElementById("turnoHoy");
-
-    if(turnoElemento){
-        turnoElemento.textContent=nombreTurno;
-    }
+default:
+texto = "🛌 Libre";
 
 }
 
-actualizarTurno();
+document.getElementById("turnoHoy").textContent = texto;
