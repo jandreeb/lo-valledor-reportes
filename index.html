@@ -144,7 +144,52 @@ LV Assistant ©️ 2026
 
 </footer>
 
-<section id="formAmbulante" style="display:none;">
+<section id="formAmbulante" class="modal" style="display:none;">
+
+<div class="modal-content">
+
+<h2>🛒 Comercio Ambulante</h2>
+
+<label>Hora</label>
+<input type="time" id="horaAmbulante">
+
+<label>Detectado por</label>
+
+<select id="deteccionAmbulante">
+<option>CCTV</option>
+<option>Patrullaje</option>
+<option>Aviso de Locatario</option>
+</select>
+
+<label>Lugar</label>
+<input
+type="text"
+id="lugarAmbulante"
+placeholder="Ej: Calle 12 Sur al medio">
+
+<label>¿Qué vendía?</label>
+<input
+type="text"
+id="productoAmbulante"
+placeholder="Ej: especies de cocina">
+
+<label>Puerta de salida</label>
+<input
+type="text"
+id="puertaAmbulante"
+placeholder="Ej: Puerta 7">
+
+<button id="generarAmbulante">
+📋 Generar Procedimiento
+</button>
+
+<button id="cerrarAmbulante">
+❌ Cerrar
+</button>
+
+</div>
+
+</section>
 
 <h2>🛒 Comercio Ambulante</h2>
 
