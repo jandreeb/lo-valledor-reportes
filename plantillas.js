@@ -26,3 +26,4 @@ ${datos.puerta}
 *${datos.jefeMercado}*`;
 
 }
+console.log("Plantillas cargadas");
