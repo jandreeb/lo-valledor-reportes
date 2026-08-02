@@ -64,9 +64,7 @@ if(generarAmbulante){
 
 const reporte = crearAmbulante(datos);
 
-        navigator.clipboard.writeText(reporte);
-
-        alert("✅ Procedimiento copiado al portapapeles.");
+        copiarReporte(reporte);
 
         formAmbulante.style.display="none";
 
