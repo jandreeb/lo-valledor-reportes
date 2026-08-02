@@ -44,9 +44,9 @@ if(generarAmbulante){
     generarAmbulante.addEventListener("click", ()=>{
 
         const hora = document.getElementById("horaAmbulante").value;
-        const detectado = document.getElementById("deteccionAmbulante").value;
+        const detectado = document.getElementById("detectadoPor").value;
         const lugar = document.getElementById("lugarAmbulante").value;
-        const especie = document.getElementById("productoAmbulante").value;
+        const especie = document.getElementById("especieAmbulante").value;
         const puerta = document.getElementById("puertaAmbulante").value;
 
         const datos = {
