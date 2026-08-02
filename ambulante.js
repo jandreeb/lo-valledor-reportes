@@ -1,7 +1,7 @@
 // ===============================
 // VENTANA AMBULANTE
 // ===============================
-
+console.log("Ambulante cargado");
 const btnAmbulante = document.getElementById("btnAmbulante");
 const formAmbulante = document.getElementById("formAmbulante");
 const cerrarAmbulante = document.getElementById("cerrarAmbulante");
