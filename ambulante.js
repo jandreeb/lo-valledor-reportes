@@ -49,26 +49,20 @@ if(generarAmbulante){
         const especie = document.getElementById("productoAmbulante").value;
         const puerta = document.getElementById("puertaAmbulante").value;
 
-        const reporte = `*Procedimiento:*
-Desalojo de comercio ambulante informal
+        const datos = {
+    hora,
+    detectado,
+    lugar,
+    especie,
+    puerta,
+    nombre: CONFIG.nombre,
+    indicativo: indicativo.value,
+    patio: patio.value,
+    jefeCuadrante: jefe.value,
+    jefeMercado: CONFIG.jefeMercado || "Pendiente"
+};
 
-*Detalles del procedimiento:*
-A las ${hora} hrs, con ${detectado.toLowerCase()} se procede a desalojar del mercado a una persona, la cual se encontraba realizando comercio ambulante no autorizado (venta de ${especie}). Se entregan verbalmente las normativas del mercado, quedando en conocimiento de la falta cometida, lo que motivó su desalojo sin más novedades.
-
-*Calle/Postura/Patio:*
-${lugar}, ${patio.value}
-
-*Desalojada por Puerta:*
-${puerta}
-
-*Procedimiento realizado por:*
-*${CONFIG.nombre} - ${indicativo.value} - ${patio.value}*
-
-*Nombre Jefe Cuadrante:*
-*${jefe.value}*
-
-*Nombre Jefe de Mercado:*
-*${CONFIG.jefeMercado || "Pendiente"}*`;
+const reporte = crearAmbulante(datos);
 
         navigator.clipboard.writeText(reporte);
 
